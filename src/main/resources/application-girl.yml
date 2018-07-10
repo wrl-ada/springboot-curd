@@ -1,0 +1,14 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /girl
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: my-secret-pw
+    url: jdbc:mysql://localhost:3306/girl
+  jpa:
+      show-sql: true
+      hibernate:
+          ddl-auto: update
