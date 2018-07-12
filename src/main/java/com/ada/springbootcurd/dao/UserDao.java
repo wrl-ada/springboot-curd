@@ -13,7 +13,7 @@ public interface UserDao {
     @Insert( "insert into t_user(id,name,age) values(#{id},#{name},#{age})" )
     void addUser(User user);
 
-    @Delete ( "delete form t_user where id=#{id}" )
+    @Delete ( "delete from t_user where id=#{id}" )
     void deleteUser(int id);
 
     @Update ( "update t_user set name=#{name},age=#{age} where id =#{id}" )
