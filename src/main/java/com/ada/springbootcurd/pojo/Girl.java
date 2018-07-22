@@ -24,9 +24,17 @@ public class Girl {
     }
 
     public Girl(String name, int age) {
-        super();
+        super ();
         this.name=name;
         this.age=age;
+    }
+
+    public void setId(int id) {
+        this.id=id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -43,5 +51,14 @@ public class Girl {
 
     public void setAge(int age) {
         this.age=age;
+    }
+
+    @Override
+    public String toString() {
+        return "Girl{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

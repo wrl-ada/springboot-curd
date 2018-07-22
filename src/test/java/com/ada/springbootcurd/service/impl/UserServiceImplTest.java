@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -21,8 +22,8 @@ public class UserServiceImplTest {
 
     @Test
     public void addUser() {
-        User user=new User ( "zhangsan", 18 );
-        User user2=new User ( "zhangsan", 17 );
+        User user=new User ( "qq", 18 );
+        User user2=new User ( "qq", 17 );
         service.addUser ( user );
         service.addUser ( user2 );
     }
@@ -50,5 +51,14 @@ public class UserServiceImplTest {
         for (User user : users) {
             System.out.print ( user.toString () );
         }
+    }
+    @Test
+    public void insertTwo(){
+        User girl1=new User ("trans",12);
+        User girl2=new User (null,19);
+        List<User> girls = new ArrayList<> (  );
+        girls.add ( girl1 );
+        girls.add ( girl2 );
+        service.insertTwo ( girls );
     }
 }

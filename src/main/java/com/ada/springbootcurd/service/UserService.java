@@ -2,6 +2,7 @@ package com.ada.springbootcurd.service;
 
 import com.ada.springbootcurd.pojo.User;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 public interface UserService {
@@ -19,4 +20,6 @@ public interface UserService {
 
     //查询所有用户
     List<User> findAll();
+
+    void insertTwo(List<User> users);
 }

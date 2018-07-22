@@ -5,12 +5,11 @@ import com.ada.springbootcurd.pojo.User;
 import com.ada.springbootcurd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
 @Service
 public class UserServiceImpl implements UserService {
-
     //@Autowired
     //@Qualifier( value="userDao" )
     @Autowired
@@ -37,13 +36,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserById(int id) {
-        User user = userDao.findUserById ( id );
+        User user=userDao.findUserById ( id );
         return user;
     }
 
     @Override
     public List<User> findAll() {
-        List<User> users = userDao.findAll ();
+        List<User> users=userDao.findAll ();
         return users;
+    }
+
+    @Override
+    @Transactional
+    public void insertTwo(List<User> users) {
+        for (User user : users) {
+            userDao.addUser ( user );
+        }
     }
 }
